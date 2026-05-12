@@ -5,7 +5,7 @@ import Input from "./components/input";
 
 
 export default async function Home() {
-  async function logginQuiz (formData) {
+  async function logginQuiz (formData: FormData) {
     'use server';
     const quizCode = formData.get("quiz-code");
     const username = formData.get("username");
