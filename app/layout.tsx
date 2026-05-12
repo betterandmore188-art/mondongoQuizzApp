@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist,Outfit } from "next/font/google";
 import "./globals.css";
+import { MongoRepository } from "./utils/mongoRepository";
 
 
 const outfit = Outfit({
@@ -8,7 +9,6 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700",'800', '900'],
 });
-
 
 
 export const metadata: Metadata = {

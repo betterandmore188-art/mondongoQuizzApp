@@ -1,4 +1,8 @@
 'use server';
+
+import { Database } from "./database";
+
+
 interface Session {
 	id: string;
 	secretHash: Uint8Array; // Uint8Array is a byte array
