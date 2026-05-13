@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist,Outfit } from "next/font/google";
 import "./globals.css";
 import { MongoRepository } from "./utils/mongoRepository";
+import { AdminAuthProvider } from "./context/adminAuth";
 
 
 const outfit = Outfit({
@@ -26,7 +27,11 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} h-full antialiased`}
     >
-      <body className="w-full h-full bg-background flex flex-col justify-stretch max-w-screen">{children}</body>
+      <body className="w-full h-full bg-background flex flex-col justify-stretch max-w-screen">
+        <AdminAuthProvider>
+          {children}
+        </AdminAuthProvider>
+      </body>
     </html>
   );
 }
